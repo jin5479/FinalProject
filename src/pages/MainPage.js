@@ -1,11 +1,13 @@
 import React from 'react'
-import room1 from '../img/room1.jpg'
+import room1 from '../assets/img/room1.jpg'
+
+
 
 
 export default function MainPage(){
     return(
-        <div>
-            <img src={room1} alt="합주실"/>
+        <div className={styles.imgContainer}>
+            <img src={room1} alt="이미지"></img>
         </div>
     );
 }
