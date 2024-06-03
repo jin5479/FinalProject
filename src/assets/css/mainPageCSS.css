@@ -1,4 +1,8 @@
-.test{
-    width: 200px;
-    height: 200px;
+.roomContainer{
+    text-align: center;
+}
+
+.roomImgStyle{
+    width: 40%;
+    height: auto;
 }
