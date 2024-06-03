@@ -10,9 +10,9 @@ export default function MainPage(){
             </div>
 
             <div className='noticeContainer'>
-                <Button title="이용 관련 안내"/>
-                <Button title="예약 현황"/>
-                <Button title="예약 하기"/>
+                <Button title="이용 관련 안내" url="https://www.naver.com/"/>
+                <Button title="예약 현황" url="https://www.google.co.kr/"/>
+                <Button title="예약 하기" url="https://section.cafe.naver.com/ca-fe/home"/>
             </div>
         </>
         
