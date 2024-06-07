@@ -1,18 +1,19 @@
 package com.KNUFinal.KNUFinal;
 
+
 import lombok.*;
 
-@Getter @Setter @ToString
-@AllArgsConstructor
-@NoArgsConstructor
-public class UserDTO {
-    private long id;
-    private String name;
-    private String phoneNumber;
 
-    public UserDTO(UserDTO userDTO) {
-        id = userDTO.getId();
-        name = userDTO.getName();
-        phoneNumber = userDTO.getPhoneNumber();
+@AllArgsConstructor  @NoArgsConstructor
+@Getter @Setter @ToString
+public class UserDTO {
+    private long idx;
+    private String username;
+    private String phone;
+
+    public UserDTO(User user) {
+        idx = user.getId();
+        username = user.getUsername();
+        phone = user.getPhone();
     }
 }

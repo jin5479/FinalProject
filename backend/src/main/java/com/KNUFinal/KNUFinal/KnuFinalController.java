@@ -5,18 +5,20 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class KnuFinalController {
-    @Autowired private KnuService knuService;
 
-    @RequestMapping("/test")
-    public List<UserDTO> list(){
-        return knuService.list();
+    @Autowired private KnuService reservationService;
+
+    @RequestMapping("/user")
+    public List<UserDTO> list() {
+        return reservationService.list();
     }
 
-    @RequestMapping("/test/{id}")
-    public UserDTO user(@PathVariable long id){
-        return knuService.findById(id);
+    @RequestMapping("/user/{id}")
+    public UserDTO movie(@PathVariable long id) {
+        return reservationService.findById(id);
     }
 }
