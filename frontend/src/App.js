@@ -1,14 +1,16 @@
 
-import './App.css';
 import Header from './components/Header';
 import MainPage from './pages/MainPage';
+import Test from './pages/Test';
+
 
 
 function App() {
   return (
     <>
-      <Header/>
-      <MainPage/>
+      <Test/>
+      {/* <Header/>
+      <MainPage/> */}
     </>
   );
 }
