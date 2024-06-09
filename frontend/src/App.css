@@ -1,25 +1,63 @@
-.calendar-container {
-  max-width:80%; /* Set a maximum width for the calendar */
-  
-  margin: 0 auto; /* Center the calendar */
+/* Ensure the calendar buttons blend well with your design */
+.fc .fc-toolbar .fc-button {
+  background-color: #007bff; /* Change to your desired color */
+  border: none; /* Remove border */
+  color: #fff; /* Button text color */
+  padding: 5px 10px; /* Adjust padding for better size */
+  border-radius: 4px; /* Rounded corners */
+  margin: 2px; /* Space between buttons */
+  font-size: 12px; /* Adjust font size */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
-.custom-calendar {
-  width: 100% !important; /* Ensure the calendar takes full width of the container */
+.fc .fc-toolbar .fc-button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
 }
 
-.custom-calendar .react-calendar__tile {
-  height: 100px; /* Adjust the height of the tiles if needed */
+.fc .fc-toolbar .fc-button:active {
+  background-color: #003d80; /* Even darker shade for active state */
+}
+
+.fc .fc-toolbar .fc-button:disabled {
+  background-color: #d6d6d6; /* Disabled state color */
+  cursor: not-allowed; /* Not-allowed cursor for disabled buttons */
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.2em; /* Adjust the title font size */
+  margin-bottom: 5px; /* Space below the title */
+  font-weight: bold; /* Make the title bold */
+}
+
+.App {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevent scrolling */
 }
 
-.dot {
-  width: 5px;
-  height: 5px;
-  background-color: red;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 5px;
+button {
+  height: 30px; /* Adjust the height of the buttons */
+}
+
+.fc {
+  width: 100%;
+  max-width: 70%; /* Maximum width for the calendar */
+}
+
+.fc .fc-view-container {
+  height: calc(100vh - 100px); /* Adjust the calendar view height to fit */
+  overflow-y: auto; /* Enable vertical scrolling within the calendar view if needed */
+}
+
+/* 일요일 날짜  */
+.fc-day-sun a{
+  color:red;
+}
+
+/* 토요일 날짜  */
+.fc-day-sat a{
+  color: blue;
 }
