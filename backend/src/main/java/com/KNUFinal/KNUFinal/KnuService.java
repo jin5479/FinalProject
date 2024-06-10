@@ -1,9 +1,9 @@
-package com.KNUFinal.KNUFinal;
+// package com.KNUFinal.KNUFinal;
 
-import java.util.List;
+// import java.util.List;
 
-public interface KnuService {
-    List<UserDTO> list();
-    public UserDTO findById(long id);
+// public interface KnuService {
+//     List<UserDTO> list();
+//     public UserDTO findById(long id);
 
-}
+// }

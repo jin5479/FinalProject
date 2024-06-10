@@ -1,14 +1,17 @@
 
-import './App.css';
 import Header from './components/Header';
 import MainPage from './pages/MainPage';
+import Test from './pages/Test';
+import TestMoviePage from './pages/TestMoviePage';
+
 
 
 function App() {
   return (
     <>
-      <Header/>
-      <MainPage/>
+      <TestMoviePage/>
+      {/* <Header/>
+      <MainPage/> */}
     </>
   );
 }

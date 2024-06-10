@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KnuFinalApplication {
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(KnuFinalApplication.class, args);
 	}
 
