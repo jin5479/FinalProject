@@ -1,19 +1,23 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header';
+import Nowbook from './pages/Nowbook';
 import MainPage from './pages/MainPage';
-import Test from './pages/Test';
+
+import RoomNoticePage from './pages/RoomNoticePage';
 import TestMoviePage from './pages/TestMoviePage';
 
 
-
-function App() {
+export default function App() {
   return (
-    <>
-      <TestMoviePage/>
-      {/* <Header/>
-      <MainPage/> */}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/cal" element={<Nowbook />} />
+        <Route path="/notice" element={<RoomNoticePage/>} />
+        <Route path="/book" element={<TestMoviePage/>}/>
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
