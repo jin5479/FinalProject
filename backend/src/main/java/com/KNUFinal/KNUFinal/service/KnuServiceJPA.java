@@ -1,14 +1,14 @@
 package com.KNUFinal.KNUFinal.service;
 
-import com.KNUFinal.KNUFinal.model.ReservationDTO;
-import com.KNUFinal.KNUFinal.model.User;
-import com.KNUFinal.KNUFinal.model.UserDTO;
-import com.KNUFinal.KNUFinal.repository.KnuFinalRepository;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.KNUFinal.KNUFinal.model.User;
+import com.KNUFinal.KNUFinal.model.UserDTO;
+import com.KNUFinal.KNUFinal.repository.KnuFinalRepository;
 
 @Service
 public class KnuServiceJPA implements KnuService {
@@ -27,12 +27,12 @@ public class KnuServiceJPA implements KnuService {
     }
 
     @Override
-    public void createReservation(ReservationDTO reservationDTO) {
+    public void createUser(UserDTO reservationDTO) {
         User user = new User();
         user.setUsername(reservationDTO.getUsername());
         user.setPhone(reservationDTO.getPhone());
-        user.setStartTime(reservationDTO.getStartTime());
-        user.setEndTime(reservationDTO.getEndTime());
+        user.setStarttime(reservationDTO.getStarttime());
+        user.setEndtime(reservationDTO.getEndtime());
         repository.save(user);
     }
 
@@ -42,8 +42,8 @@ public class KnuServiceJPA implements KnuService {
         if (user != null) {
             user.setUsername(userDTO.getUsername());
             user.setPhone(userDTO.getPhone());
-            user.setStartTime(userDTO.getStartTime());
-            user.setEndTime(userDTO.getEndTime());
+            user.setStarttime(userDTO.getStarttime());
+            user.setEndtime(userDTO.getEndtime());
             repository.save(user);
         }
     }
@@ -53,17 +53,17 @@ public class KnuServiceJPA implements KnuService {
         repository.deleteById(id);
     }
 
-    @Override
-    public void updateReservation(ReservationDTO reservationDTO) {
-        User user = repository.findById(reservationDTO.getIdx()).orElse(null);
-        if (user != null) {
-            user.setUsername(reservationDTO.getUsername());
-            user.setPhone(reservationDTO.getPhone());
-            user.setStartTime(reservationDTO.getStartTime());
-            user.setEndTime(reservationDTO.getEndTime());
-            repository.save(user);
-        }
-    }
+    // @Override
+    // public void updateReservation(ReservationDTO reservationDTO) {
+    //     User user = repository.findById(reservationDTO.getIdx()).orElse(null);
+    //     if (user != null) {
+    //         user.setUsername(reservationDTO.getUsername());
+    //         user.setPhone(reservationDTO.getPhone());
+    //         user.setStartTime(reservationDTO.getStartTime());
+    //         user.setEndTime(reservationDTO.getEndTime());
+    //         repository.save(user);
+    //     }
+    // }
 
     @Override
     public void deleteReservation(Long id) {

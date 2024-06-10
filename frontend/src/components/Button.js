@@ -1,13 +1,18 @@
 import "../assets/css/buttonStyle.css";
 
 export default function Button(props) {
+  const handleClick = () => {
+    if (props.onClick) {
+      props.onClick();
+    } else if (props.url) {
+      window.location.href = props.url;
+    }
+  };
+
   return (
-    <>
-      <button onClick={() => (window.location.href = props.url)}>
-        
-        <img src={props.img} alt="이미지"></img>
-        <span>{props.title}</span>
-      </button>
-    </>
+    <button onClick={handleClick}>
+      <img src={props.img} alt="이미지" />
+      <span>{props.title}</span>
+    </button>
   );
 }

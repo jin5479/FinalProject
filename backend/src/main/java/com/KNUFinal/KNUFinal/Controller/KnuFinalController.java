@@ -1,13 +1,20 @@
 package com.KNUFinal.KNUFinal.Controller;
 
-import com.KNUFinal.KNUFinal.model.ReservationDTO;
-import com.KNUFinal.KNUFinal.model.UserDTO;
-import com.KNUFinal.KNUFinal.service.KnuService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.KNUFinal.KNUFinal.model.UserDTO;
+import com.KNUFinal.KNUFinal.service.KnuService;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -27,10 +34,10 @@ public class KnuFinalController {
     }
 
     @PostMapping("/reservation")
-    public ResponseEntity<?> createReservation(@RequestBody ReservationDTO reservationDTO) {
-        reservationService.createReservation(reservationDTO);
-        return ResponseEntity.ok().build();
-    }
+    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
+     reservationService.createUser(userDTO);
+    return ResponseEntity.ok(userDTO);
+}
 
     @PutMapping("/user/{id}")
     public ResponseEntity<?> updateUser(@PathVariable long id, @RequestBody UserDTO userDTO) {

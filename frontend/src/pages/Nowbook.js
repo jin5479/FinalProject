@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 
-const Test = () => {
+const Nowbook = () => {
     return(
       <div className="App">
         <FullCalendar 
@@ -28,4 +28,4 @@ const Test = () => {
     );
 }
 
-export default Test;
+export default Nowbook;

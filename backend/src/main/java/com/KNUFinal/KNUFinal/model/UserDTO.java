@@ -1,6 +1,9 @@
 package com.KNUFinal.KNUFinal.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -11,14 +14,14 @@ public class UserDTO {
     private long idx;
     private String username;
     private String phone;
-    private String startTime;
-    private String endTime;
+    private String starttime;
+    private String endtime;
 
     public UserDTO(User user) {
         this.idx = user.getIdx();
         this.username = user.getUsername();
         this.phone = user.getPhone();
-        this.startTime = user.getStartTime();
-        this.endTime = user.getEndTime();
+        this.starttime = user.getStarttime();
+        this.endtime = user.getEndtime();
     }
 }

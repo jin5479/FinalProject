@@ -7,11 +7,13 @@ import Button from '../components/Button';
 import noticeIcon from '../assets/img/noticeIcon.png';
 import scheduleIcon from '../assets/img/scheduleIcon.png';
 import writeIcon from '../assets/img/writeIcon.png';
+import { useNavigate } from "react-router-dom";
 
 const images = [roomImg, roomImg2, roomImg3];
 
 export default function MainPage() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
     const handleMoveLeft = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
@@ -19,6 +21,14 @@ export default function MainPage() {
 
     const handleMoveRight = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const goToCal = () => {
+        navigate("/cal");
+    };
+
+    const goToBook=()=>{
+        navigate("/book");
     };
 
     return (
@@ -36,9 +46,9 @@ export default function MainPage() {
             </div>
 
             <div className='noticeContainer'>
-                <Button title="이용 관련 안내" url="https://www.naver.com/" img={noticeIcon}/>
-                <Button title="예약 현황" url="https://www.google.co.kr/" img={scheduleIcon}/>
-                <Button title="예약 하기" url="https://section.cafe.naver.com/ca-fe/home" img={writeIcon}/>
+                <Button title="이용 관련 안내" url="/notice" img={noticeIcon} />
+                <Button title="예약 현황" img={scheduleIcon} onClick={goToCal} />
+                <Button title="예약 하기" img={writeIcon} onClick={goToBook} />
             </div>
         </>
     );
