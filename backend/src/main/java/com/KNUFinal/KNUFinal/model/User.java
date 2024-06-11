@@ -1,5 +1,6 @@
 package com.KNUFinal.KNUFinal.model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +23,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idx;
     private String username;
-    private String phone;
-    private String starttime;
-    private String endtime;
+    private String date;
+     private String password;
+    // private String starttime;
+    // private String endtime;
 }

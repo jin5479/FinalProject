@@ -6,15 +6,15 @@ const apiUrl = `${baseURL}`;
 
 function TestMoviePage() {
   const [username, setUsername] = useState('');
-  const [phone,setPhone] = useState('');
-  const [starttime,setStarttime] = useState('');
-  const [endtime,setEndtime] = useState('');
+  const [date,setDate] = useState('');
+  // const [starttime,setStarttime] = useState('');
+  // const [endtime,setEndtime] = useState('');
   
 
   const handleSubmit = async(e) =>{
     e.preventDefault();
 
-    const createUser = {username, phone, starttime, endtime};
+    const createUser = {username, date};
 
     try{
       const response = await axios.post(`${apiUrl}`+"/reservation",createUser)
@@ -39,18 +39,10 @@ function TestMoviePage() {
             </div>
 
             <div>
-                <label>phone:</label>
-                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <label>date:</label>
+                <input type="text" value={date} onChange={(e) => setDate(e.target.value)} />
             </div>
 
-            <div>
-                <label>startTime:</label>
-                <input type="text" value={starttime} onChange={(e) => setStarttime(e.target.value)} />
-            </div>
-            <div>
-                <label>endTime:</label>
-                <input type="text" value={endtime} onChange={(e) => setEndtime(e.target.value)} />
-            </div>
             <button type="submit">Submit</button>
         </form>
 
