@@ -25,4 +25,5 @@ public class User {
     private String phone;
     private String starttime;
     private String endtime;
+    private boolean Approved;
 }

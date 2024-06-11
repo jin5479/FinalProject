@@ -33,6 +33,7 @@ public class KnuServiceJPA implements KnuService {
         user.setPhone(reservationDTO.getPhone());
         user.setStarttime(reservationDTO.getStarttime());
         user.setEndtime(reservationDTO.getEndtime());
+        user.setApproved(false);
         repository.save(user);
     }
 
@@ -44,6 +45,7 @@ public class KnuServiceJPA implements KnuService {
             user.setPhone(userDTO.getPhone());
             user.setStarttime(userDTO.getStarttime());
             user.setEndtime(userDTO.getEndtime());
+            user.setApproved(userDTO.isApproved());
             repository.save(user);
         }
     }

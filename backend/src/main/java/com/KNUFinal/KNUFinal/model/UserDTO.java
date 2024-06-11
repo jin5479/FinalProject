@@ -16,6 +16,7 @@ public class UserDTO {
     private String phone;
     private String starttime;
     private String endtime;
+    private boolean Approved;
 
     public UserDTO(User user) {
         this.idx = user.getIdx();
@@ -23,5 +24,6 @@ public class UserDTO {
         this.phone = user.getPhone();
         this.starttime = user.getStarttime();
         this.endtime = user.getEndtime();
+        this.Approved = user.isApproved();
     }
 }
