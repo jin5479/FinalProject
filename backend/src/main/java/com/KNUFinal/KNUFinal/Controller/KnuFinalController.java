@@ -2,6 +2,8 @@ package com.KNUFinal.KNUFinal.Controller;
 
 import java.util.List;
 
+import com.KNUFinal.KNUFinal.model.Reservation;
+import com.KNUFinal.KNUFinal.model.ReservationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -67,5 +69,21 @@ public class KnuFinalController {
     public ResponseEntity<?> deleteUser(@PathVariable long id) {
         reservationService.deleteUser(id);
         return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/admin/checking")
+    public ResponseEntity<ReservationDTO> createReservation(@RequestBody ReservationDTO reservationDTO){
+        reserveService.createReservation(reservationDTO);
+        return ResponseEntity.ok(reservationDTO);
+    }
+
+    @DeleteMapping("/admin/{id}")
+    public void deleteReservation(@PathVariable long id){
+        reserveService.deleteReservation(id);
+    }
+
+    @PutMapping("/admin/{id}")
+    public Reservation updateReservation(@PathVariable long id, @RequestBody ReservationDTO reservationDTO){
+        return reserveService.updateReservation(id,reservationDTO);
     }
 }
