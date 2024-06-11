@@ -11,8 +11,8 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 60px;
-    width: 100px; /* 수정된 버튼 너비 */
+    font-size: 40px;
+    width: 200px; /* 수정된 버튼 너비 */
     height: 250px;
     border: 1px solid #000;
     margin: 60px 10px 10% 10px; /* 각 버튼 사이의 간격 설정 */

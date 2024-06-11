@@ -8,6 +8,9 @@ import noticeIcon from '../assets/img/noticeIcon.png';
 import scheduleIcon from '../assets/img/scheduleIcon.png';
 import writeIcon from '../assets/img/writeIcon.png';
 import { useNavigate } from "react-router-dom";
+import prevIcon from '../assets/img/prevIcon.png'
+import nextIcon from '../assets/img/nextIcon.png'
+import Header from '../components/Header';
 
 const images = [roomImg, roomImg2, roomImg3];
 
@@ -33,8 +36,11 @@ export default function MainPage() {
 
     return (
         <>
+            <Header/>
             <div className='roomContainer'>
-                <button onClick={handleMoveLeft} className='moveButton'>Left</button>
+                <button onClick={handleMoveLeft} className='moveButton'>
+                <img src={prevIcon}alt="이전아이콘"></img>
+                </button>
                 <div className='imgWrapper'>
                     <img 
                         className='roomImgStyle' 
@@ -42,7 +48,9 @@ export default function MainPage() {
                         alt="이미지" 
                     />
                 </div>
-                <button onClick={handleMoveRight} className='moveButton'>Right</button>
+                <button onClick={handleMoveRight} className='moveButton'>
+                    <img src={nextIcon}alt="다음아이콘"></img>
+                </button>
             </div>
 
             <div className='noticeContainer'>
@@ -53,3 +61,4 @@ export default function MainPage() {
         </>
     );
 }
+
