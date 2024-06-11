@@ -13,17 +13,16 @@ public class UserDTO {
 
     private long idx;
     private String username;
-    private String phone;
-    private String starttime;
-    private String endtime;
-    private boolean Approved;
+    private String date;
+    private String password;
+    // private String endtime;
 
     public UserDTO(User user) {
         this.idx = user.getIdx();
         this.username = user.getUsername();
-        this.phone = user.getPhone();
-        this.starttime = user.getStarttime();
-        this.endtime = user.getEndtime();
-        this.Approved = user.isApproved();
+        this.date = user.getDate();
+        this.password = user.getPassword();
+        // this.starttime = user.getStarttime();
+        // this.endtime = user.getEndtime();
     }
 }

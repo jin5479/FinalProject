@@ -6,6 +6,7 @@ import MainPage from './pages/MainPage';
 
 import RoomNoticePage from './pages/RoomNoticePage';
 import TestMoviePage from './pages/TestMoviePage';
+import AdminPage from './pages/AdminPage';
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/cal" element={<Nowbook />} />
         <Route path="/notice" element={<RoomNoticePage/>} />
         <Route path="/book" element={<TestMoviePage/>}/>
+        <Route path='/admin/users' element={<AdminPage/>}/>
         
       </Routes>
     </BrowserRouter>

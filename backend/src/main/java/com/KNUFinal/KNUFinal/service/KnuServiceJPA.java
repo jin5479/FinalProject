@@ -30,10 +30,9 @@ public class KnuServiceJPA implements KnuService {
     public void createUser(UserDTO reservationDTO) {
         User user = new User();
         user.setUsername(reservationDTO.getUsername());
-        user.setPhone(reservationDTO.getPhone());
-        user.setStarttime(reservationDTO.getStarttime());
-        user.setEndtime(reservationDTO.getEndtime());
-        user.setApproved(false);
+        user.setDate(reservationDTO.getDate());
+        user.setPassword(reservationDTO.getPassword());
+        // user.setEndtime(reservationDTO.getEndtime());
         repository.save(user);
     }
 
@@ -42,10 +41,9 @@ public class KnuServiceJPA implements KnuService {
         User user = repository.findById(id).orElse(null);
         if (user != null) {
             user.setUsername(userDTO.getUsername());
-            user.setPhone(userDTO.getPhone());
-            user.setStarttime(userDTO.getStarttime());
-            user.setEndtime(userDTO.getEndtime());
-            user.setApproved(userDTO.isApproved());
+            user.setDate(userDTO.getDate());
+            user.setPassword(userDTO.getPassword());
+            // user.setEndtime(userDTO.getEndtime());
             repository.save(user);
         }
     }
