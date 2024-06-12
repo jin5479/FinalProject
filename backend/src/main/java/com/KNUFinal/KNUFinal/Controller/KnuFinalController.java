@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -80,7 +81,7 @@ public class KnuFinalController {
     }
 
     @PostMapping("/admin/checking")
-    public ResponseEntity<ReservationDTO> createReservation(@RequestBody ReservationDTO reservationDTO){
+    public ResponseEntity<ReservationDTO> createReservation(@Validated @RequestBody ReservationDTO reservationDTO){
         reserveService.createReservation(reservationDTO);
         return ResponseEntity.ok(reservationDTO);
     }
@@ -94,7 +95,7 @@ public class KnuFinalController {
     }
 
     @PutMapping("/admin/{id}")
-    public Reservation updateReservation(@PathVariable long id, @RequestBody ReservationDTO reservationDTO){
+    public Reservation updateReservation(@PathVariable long id,@Validated @RequestBody ReservationDTO reservationDTO){
         return reserveService.updateReservation(id,reservationDTO);
     }
 }
