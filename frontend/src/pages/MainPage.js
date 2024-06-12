@@ -34,9 +34,19 @@ export default function MainPage() {
         navigate("/book");
     };
 
+    const goToNotice=()=>{
+        navigate("/notice");
+    }
+
+    const goToAdminLogin=()=>{
+        navigate("/admin/login");
+    }
+
+
     return (
         <>
             <Header/>
+            
             <div className='roomContainer'>
                 <button onClick={handleMoveLeft} className='moveButton'>
                 <img src={prevIcon}alt="이전아이콘"></img>
@@ -54,9 +64,10 @@ export default function MainPage() {
             </div>
 
             <div className='noticeContainer'>
-                <Button title="이용 관련 안내" url="/notice" img={noticeIcon} />
+                <Button title="이용 관련 안내" img={noticeIcon} onClick={goToNotice} />
                 <Button title="예약 현황" img={scheduleIcon} onClick={goToCal} />
                 <Button title="예약 하기" img={writeIcon} onClick={goToBook} />
+                <button onClick={goToAdminLogin}>예약 관리<br/>관리자 전용</button>
             </div>
         </>
     );

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const baseURL = process.env.REACT_APP_SERVER;
 const apiUrl = `${baseURL}`;
@@ -8,6 +9,7 @@ const apiUrl = `${baseURL}`;
 //reservation 테이블에 있는 db삭제 (캘린더에 나타나는 일정 삭제)
 export default function AdminDeletePage(){
 const [userInfo,setUserInfo] = useState([]);
+const navigate = useNavigate();
     //reservation테이블 get
     useEffect(()=>{
         const getReservationTableInfo = async()=>{
@@ -34,6 +36,10 @@ const [userInfo,setUserInfo] = useState([]);
         }
     };
 
+    const goToAdminHome=()=>{
+        navigate('/admin/selectMenu');
+    }
+
     return(
         <div>
             {userInfo.map(user => (
@@ -58,7 +64,7 @@ const [userInfo,setUserInfo] = useState([]);
                     <button type="button" onClick={() => handleDelete(user.idx)}>Delete</button>
                 </form>
             ))}
-            <button onClick={()=>window.location.href='/admin/selectMenu'}>관리 홈으로</button>
+            <button onClick={goToAdminHome}>관리 홈으로</button>
         </div>
     )
 
