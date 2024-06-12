@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "react-calendar/dist/Calendar.css";
-import "../App.css"; // Ensure you import your custom CSS file
+import "../assets/css/calendarStyle.css"; 
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import axios from 'axios';
@@ -14,7 +14,7 @@ const Nowbook = () => {
   useEffect(() => {
     const fetchReservations = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/users`);
+        const response = await axios.get(`${apiUrl}/admin/final`);
         const reservations = response.data;
         
         const eventList = reservations.map(reservation => ({
@@ -39,6 +39,7 @@ const Nowbook = () => {
         plugins={[dayGridPlugin]}
         height="auto"
         events={events}
+        
       />
     </div>
   );

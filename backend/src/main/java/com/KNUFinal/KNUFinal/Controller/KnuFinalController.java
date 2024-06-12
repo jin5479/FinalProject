@@ -2,8 +2,6 @@ package com.KNUFinal.KNUFinal.Controller;
 
 import java.util.List;
 
-import com.KNUFinal.KNUFinal.model.Reservation;
-import com.KNUFinal.KNUFinal.model.ReservationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.KNUFinal.KNUFinal.model.Reservation;
+import com.KNUFinal.KNUFinal.model.ReservationDTO;
 import com.KNUFinal.KNUFinal.model.UserDTO;
 import com.KNUFinal.KNUFinal.service.KnuService;
 import com.KNUFinal.KNUFinal.service.reservationService;
@@ -65,10 +65,18 @@ public class KnuFinalController {
         return ResponseEntity.ok().build();
     }
 
+
+    //사용자가 보낸 (users 테이블) 정보 delete
     @DeleteMapping("/user/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable long id) {
         reservationService.deleteUser(id);
         return ResponseEntity.ok().build();
+    }
+
+    //calendar에서 db받아오기 위해 사용
+    @GetMapping("/admin/final")
+    public List<ReservationDTO> finalList(){
+        return reserveService.reservationList();
     }
 
     @PostMapping("/admin/checking")
@@ -77,9 +85,12 @@ public class KnuFinalController {
         return ResponseEntity.ok(reservationDTO);
     }
 
-    @DeleteMapping("/admin/{id}")
-    public void deleteReservation(@PathVariable long id){
+
+    //admin이 보낸 (reservation 테이블) 정보 delete
+    @DeleteMapping("/admin/users/{id}")
+    public ResponseEntity<?> deleteReservation(@PathVariable long id){
         reserveService.deleteReservation(id);
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping("/admin/{id}")
