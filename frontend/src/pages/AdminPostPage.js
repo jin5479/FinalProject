@@ -1,12 +1,14 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import '../assets/css/adminPostPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const baseURL = process.env.REACT_APP_SERVER;
 const apiUrl = `${baseURL}`;
 
 export default function AdminPostPage() {
     const [userInfo, setUserInfo] = useState([]);
+    const navigate = useNavigate();
 
     // users 테이블 get
     useEffect(() => {
@@ -63,6 +65,10 @@ export default function AdminPostPage() {
         }
     };
 
+    const goToAdminHome=()=>{
+        navigate('/admin/selectMenu');
+    }
+
     return (
         <div className="admin-post-page">
             {userInfo.map(user => (
@@ -89,7 +95,7 @@ export default function AdminPostPage() {
                     </div>
                 </form>
             ))}
-            <button onClick={()=>window.location.href='/admin/selectMenu'}>관리 홈으로</button>
+            <button onClick={goToAdminHome}>관리 홈으로</button>
         </div>
     );
 }

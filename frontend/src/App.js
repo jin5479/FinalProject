@@ -10,6 +10,7 @@ import AdminPage from './pages/AdminPage';
 import AdminDeletePage from './pages/AdminDeletePage';
 import AdminPostPage from './pages/AdminPostPage';
 import Header from './components/Header';
+import AdminLoginPage from './pages/AdminLoginPage';
 
 
 
@@ -31,13 +32,15 @@ export default function App() {
         <Route path="/book" element={<DoReserve/>}/>
 
         {/* 어드민 메인 페이지 */}
-        <Route path="/admin/selectMenu" element={<AdminPage/>}/>
+        <Route path="/admin/selectmenu" element={<AdminPage/>}/>
 
         {/* 신청된 예약 관리 페이지 */}
-        <Route path='/admin/postuser' element={<AdminPostPage/>}/>
+        <Route path='/admin/postuser' element={<AdminPostPage/> }/>
 
         {/* 최종완료된 예약 삭제 페이지 */}
         <Route path='/admin/deleteuser' element={<AdminDeletePage/>}/>
+
+        <Route path='/admin/login' element={<AdminLoginPage/>}/>
       </Routes>
     </BrowserRouter>
     </>
